@@ -1,0 +1,218 @@
+<div class="container-fluid g-0">
+  <app-header (sideNavToggled)="sideNavStatus = $event"></app-header>
+  <main>
+    <app-side-nav
+      [sideNavStatus]="sideNavStatus"
+      [ngClass]="{ 'app-side-nav-open': sideNavStatus }"
+    ></app-side-nav>
+
+    <div
+      class="display-area p-3"
+      [ngClass]="{ 'display-area-shrink': sideNavStatus }"
+    >
+      <!-- **************** -->
+      <button class="arrow" (click)="toggleMe()">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <button class="arrow2" (click)="toggleMe2()" *ngIf="hideMe">
+        <i class="fa-solid fa-angle-left"></i>
+      </button>
+
+      <app-side-arrow *ngIf="showMe"></app-side-arrow>
+
+      <!-- navbar*********************************************************************** -->
+
+      <div class="card main-card">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navbar1">
+          <a class="navbar-brand" href="#"></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  ><i class="fa-sharp fa-solid fa-film p-2"></i
+                  ><b>Watch the Webstore tutorial video</b></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="fa-sharp fa-solid fa-film p-2"></i
+                  ><b>Watch the Payment link tutorial video</b></a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- second navbar -->
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary all-left navbar2">
+          <a class="navbar-brand dash-text all-left" href="#"
+            ><b>Dashboard</b></a
+          >
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent ">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <input
+                  class="nav-link active date"
+                  aria-current="page"
+                  type="date"
+                />
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- 3 card  -->
+
+        <div class="row all-left">
+          <div class="col-sm-4 mb-3 mb-sm-0">
+            <div class="card card-size">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <i class="fa-sharp fa-solid fa-indian-rupee-sign p-2"></i>0
+                </h5>
+                <p class="card-text">Total Transection</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 mb-3 mb-sm-0">
+            <div class="card card-size">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <i class="fa-sharp fa-solid fa-indian-rupee-sign p-2"></i>0.00
+                </h5>
+                <p class="card-text">Total Revenu</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card card-size">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <i class="fa-sharp fa-solid fa-indian-rupee-sign p-2"></i>0.00
+                </h5>
+                <p class="card-text">Total Earning</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 input box -->
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary seven-card">
+          <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <div class="card-body">
+                    <input
+                      class="nav-link active date"
+                      aria-current="page"
+                      type="date"
+                    />
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div class="card-body">
+                    <input
+                      class="nav-link active date"
+                      aria-current="page"
+                      type="text"
+                      value="Title"
+                    />
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <div class="card-body">
+                    <input
+                      class="nav-link active date"
+                      aria-current="page"
+                      type="text"
+                      value="Subcatogary"
+                    />
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <div class="card-body">
+                    <input
+                      class="nav-link active date"
+                      aria-current="page"
+                      type="text"
+                      value="All"
+                    />
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <div class="card-body">
+                    <input
+                      class="nav-link active date"
+                      aria-current="page"
+                      value="All"
+                      type="text"
+                    />
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <div class="card-body">
+                    <input
+                      class="nav-link active date"
+                      aria-current="page"
+                      value="10 items per page"
+                      type="text"
+                    />
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <div class="card-body">
+                    <i
+                      class="fa-solid fa-magnifying-glass nav-link active search"
+                      aria-current="page"
+                    ></i>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!-- big card -->
+        <div class="p-5">
+          <div class="card-body big-card">
+            <div class="row">
+              <div class="col-12 card-size">
+                <div class="card-body">
+                  <i class="fa-solid fa-house-chimney icon-logo"></i>
+
+                  <p class="card-text icon-logo1">
+                    No links found in the given date range. Please try adjusting
+                    the date range.
+                  </p>
+                  <a href="#" class="btn btn-primary icon-btn">Create Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container"></div>
+      </div>
+    </div>
+  </main>
+</div>
