@@ -4,7 +4,6 @@
   "newProjectRoot": "projects",
   "projects": {
     
-    
     "myapp": {
       "projectType": "application",
       "schematics": {},
